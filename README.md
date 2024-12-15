@@ -1,5 +1,3 @@
-[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/T6T427A37)
-
 # VortiK's Cannon Turret
 
 Small mod that adds a cannon turret that can use specially manufactured tank shell magazine ammunitions.

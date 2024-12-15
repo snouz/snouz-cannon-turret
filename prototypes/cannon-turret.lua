@@ -53,101 +53,6 @@ return
 }
 end
 
-local function cannon_turret_heavy_extension(inputs)
-	return
-	{
-		filename = path .. "/graphics/entity/cannon-turret-heavy.png",
-		priority = "medium",
-		scale = 0.5,
-		line_length = 1,
-    width = 179,
-    height = 132,
-		direction_count = 8,
-		frame_count = 1,
-		run_mode = inputs.run_mode and inputs.run_mode or "forward",
-		shift = {0.055, -0.5},
-		axially_symmetrical = false
-	}
-end
-
-local function cannon_turret_heavy_extension_mask(inputs)
-	return
-	{
-    filename = path .. "/graphics/entity/cannon-turret-heavy-mask.png",
-    scale = 0.5,
-    flags = { "mask" },
-    line_length = 8,
-    width = 72,
-    height = 66,
-    axially_symmetrical = false,
-    direction_count = 64,
-    frame_count = 1,
-    shift = {0.055, -0.53},
-    apply_runtime_tint = true
-	}
-end
-
-local function cannon_turret_heavy_extension_shadow(inputs)
-	return
-	{
-		filename = path .. "/graphics/entity/cannon-turret-heavy-shadow.png",
-		scale = 0.5,
-    line_length = 1,
-    width = 193,
-    height = 134,
-		frame_count = 1,
-		direction_count = 8,
-		run_mode = inputs.run_mode and inputs.run_mode or "forward",
-		shift = {0.9, 0.3},
-		axially_symmetrical = false,
-		draw_as_shadow = true
-	}
-end
-
-local function cannon_turret_heavy_attack(inputs)
-	return
-	{
-		layers =
-		{
-			{
-				filename = path .. "/graphics/entity/cannon-turret-heavy.png",
-				scale = 0.5,
- 				line_length = 8,
-        width = 179,
-        height = 132,
-				frame_count = 1,
-				direction_count = 64,
-				shift = {0.055, -0.55},
-				animation_speed = 8
-			},
-			{
-        filename = path .. "/graphics/entity/cannon-turret-heavy-mask.png",
-        scale = 0.5,
-        flags = { "mask" },
-        line_length = 8,
-        width = 72,
-        height = 66,
-        axially_symmetrical = false,
-        direction_count = 64,
-        frame_count = 1,
-        shift = {0.055, -0.60},
-        apply_runtime_tint = true
-      },
-			{
-				filename = path .. "/graphics/entity/cannon-turret-heavy-shadow.png",
-				scale = 0.5,
- 				line_length = 8,
-        width = 193,
-        height = 134,
-				frame_count = 1,
-				draw_as_shadow = true,
-				shift = {1, 0.1},
-				direction_count = 64,
-			}
-		}
-	}
-end
-
 -- entity
 data:extend(
 {
@@ -253,7 +158,7 @@ data:extend(
     attack_parameters =
     {
       type = "projectile",
-      ammo_category = "cannon-shell-magazine",
+      ammo_category = "cannon-shell",
       cooldown = 180,
       projectile_creation_distance = 2,
       projectile_center = {0, 0},
@@ -264,7 +169,7 @@ data:extend(
         direction_deviation = 0.1,
         speed = 0.1,
         speed_deviation = 0.03,
-        center = {0, 0},
+        center = {0, 0.2},
         creation_distance = -1.925,
         starting_frame_speed = 0.2,
         starting_frame_speed_deviation = 0.1
@@ -285,6 +190,104 @@ data:extend(
     call_for_help_radius = 46
   },
 })
+
+
+
+local function cannon_turret_heavy_extension(inputs)
+  return
+  {
+    filename = path .. "/graphics/entity/cannon-turret-heavy.png",
+    priority = "medium",
+    scale = 0.5,
+    line_length = 1,
+    width = 179,
+    height = 132,
+    direction_count = 8,
+    frame_count = 1,
+    run_mode = inputs.run_mode and inputs.run_mode or "forward",
+    shift = {0.055, -0.5},
+    axially_symmetrical = false
+  }
+end
+
+local function cannon_turret_heavy_extension_mask(inputs)
+  return
+  {
+    filename = path .. "/graphics/entity/cannon-turret-heavy-mask.png",
+    scale = 0.5,
+    flags = { "mask" },
+    line_length = 8,
+    width = 72,
+    height = 66,
+    axially_symmetrical = false,
+    direction_count = 64,
+    frame_count = 1,
+    shift = {0.055, -0.53},
+    apply_runtime_tint = true
+  }
+end
+
+local function cannon_turret_heavy_extension_shadow(inputs)
+  return
+  {
+    filename = path .. "/graphics/entity/cannon-turret-heavy-shadow.png",
+    scale = 0.5,
+    line_length = 1,
+    width = 193,
+    height = 134,
+    frame_count = 1,
+    direction_count = 8,
+    run_mode = inputs.run_mode and inputs.run_mode or "forward",
+    shift = {0.9, 0.3},
+    axially_symmetrical = false,
+    draw_as_shadow = true
+  }
+end
+
+local function cannon_turret_heavy_attack(inputs)
+  return
+  {
+    layers =
+    {
+      {
+        filename = path .. "/graphics/entity/cannon-turret-heavy.png",
+        scale = 0.5,
+        line_length = 8,
+        width = 179,
+        height = 132,
+        frame_count = 1,
+        direction_count = 64,
+        shift = {0.055, -0.55},
+        animation_speed = 8
+      },
+      {
+        filename = path .. "/graphics/entity/cannon-turret-heavy-mask.png",
+        scale = 0.5,
+        flags = { "mask" },
+        line_length = 8,
+        width = 72,
+        height = 66,
+        axially_symmetrical = false,
+        direction_count = 64,
+        frame_count = 1,
+        shift = {0.055, -0.60},
+        apply_runtime_tint = true
+      },
+      {
+        filename = path .. "/graphics/entity/cannon-turret-heavy-shadow.png",
+        scale = 0.5,
+        line_length = 8,
+        width = 193,
+        height = 134,
+        frame_count = 1,
+        draw_as_shadow = true,
+        shift = {1, 0.1},
+        direction_count = 64,
+      }
+    }
+  }
+end
+
 
 data:extend(
 {
@@ -384,7 +387,7 @@ data:extend(
     attack_parameters =
     {
       type = "projectile",
-      ammo_category = "cannon-shell-magazine",
+      ammo_category = "cannon-shell",
       cooldown = 90,
       projectile_creation_distance = 2,
       projectile_center = {0, 0},
@@ -395,7 +398,7 @@ data:extend(
         direction_deviation = 0.1,
         speed = 0.1,
         speed_deviation = 0.03,
-        center = {0, 0},
+        center = {0, 0.2},
         creation_distance = -1.925,
         starting_frame_speed = 0.2,
         starting_frame_speed_deviation = 0.1
