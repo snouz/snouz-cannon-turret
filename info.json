@@ -1,0 +1,14 @@
+{
+  "name": "snouz-cannon-turret",
+  "version": "2.0.0",
+  "title": "snouz's Cannon Turret",
+  "author": "VortiK, snouz",
+  "homepage": "",
+  "description": "Adds a cannon mounted turret and specific cannon shell magazine ammunition that behave like the thank shells without friendly fire colliding. Bonus technology to make all walls and gates resistant to explosions to better works with the cannon turret.",
+  "factorio_version": "2.0",
+  "dependencies": [
+    "base >= 2.0",
+    "? space-age >= 2.0",
+    "? quality >= 2.0"
+  ]
+}
