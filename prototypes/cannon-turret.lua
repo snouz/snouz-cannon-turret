@@ -6,15 +6,32 @@ return
 {
       filename = path .. "/graphics/entity/cannon-turret-sheet.png",
       priority = "medium",
-      scale = 0.75,
-      width = 128,
-      height = 128,
+      scale = 0.5,
+      width = 192,
+      height = 192,
       direction_count = inputs.direction_count and inputs.direction_count or 64,
       frame_count = 1,
       line_length = inputs.line_length and inputs.line_length or 8,
       axially_symmetrical = false,
       run_mode = inputs.run_mode and inputs.run_mode or "forward",
-      shift = {0.25,-0.58},
+      shift = {0.25,-0.3},
+}
+end
+local function cannon_turret_sheet_shadow(inputs)
+return
+{
+      filename = path .. "/graphics/entity/cannon-turret-sheet-shadow.png",
+      priority = "medium",
+      scale = 0.5,
+      width = 192,
+      height = 192,
+      direction_count = inputs.direction_count and inputs.direction_count or 64,
+      frame_count = 1,
+      line_length = inputs.line_length and inputs.line_length or 8,
+      axially_symmetrical = false,
+      run_mode = inputs.run_mode and inputs.run_mode or "forward",
+      shift = {0.25,-0.3},
+      draw_as_shadow = true,
 }
 end
 
@@ -31,7 +48,7 @@ return
       line_length = inputs.line_length and inputs.line_length or 8,
       axially_symmetrical = false,
       run_mode = inputs.run_mode and inputs.run_mode or "forward",
-      shift = {0.25,-0.58},
+      shift = {0.25,-0.3},
       apply_runtime_tint = true
 }
 end
@@ -48,7 +65,7 @@ local function cannon_turret_heavy_extension(inputs)
 		direction_count = 8,
 		frame_count = 1,
 		run_mode = inputs.run_mode and inputs.run_mode or "forward",
-		shift = {0.055, -0.7},
+		shift = {0.055, -0.5},
 		axially_symmetrical = false
 	}
 end
@@ -65,7 +82,7 @@ local function cannon_turret_heavy_extension_mask(inputs)
     axially_symmetrical = false,
     direction_count = 64,
     frame_count = 1,
-    shift = {0.055, -0.73},
+    shift = {0.055, -0.53},
     apply_runtime_tint = true
 	}
 end
@@ -81,7 +98,7 @@ local function cannon_turret_heavy_extension_shadow(inputs)
 		frame_count = 1,
 		direction_count = 8,
 		run_mode = inputs.run_mode and inputs.run_mode or "forward",
-		shift = {0.9, 0.1},
+		shift = {0.9, 0.3},
 		axially_symmetrical = false,
 		draw_as_shadow = true
 	}
@@ -100,7 +117,7 @@ local function cannon_turret_heavy_attack(inputs)
         height = 132,
 				frame_count = 1,
 				direction_count = 64,
-				shift = {0.055, -0.75},
+				shift = {0.055, -0.55},
 				animation_speed = 8
 			},
 			{
@@ -113,7 +130,7 @@ local function cannon_turret_heavy_attack(inputs)
         axially_symmetrical = false,
         direction_count = 64,
         frame_count = 1,
-        shift = {0.055, -0.80},
+        shift = {0.055, -0.60},
         apply_runtime_tint = true
       },
 			{
@@ -162,6 +179,7 @@ data:extend(
     folded_animation = { 
       layers = 
       { 
+        cannon_turret_sheet_shadow{},
         cannon_turret_sheet{},
         cannon_turret_mask{}
       }
@@ -169,6 +187,7 @@ data:extend(
     preparing_animation = { 
       layers = 
       { 
+        cannon_turret_sheet_shadow{},
         cannon_turret_sheet{},
         cannon_turret_mask{}
       }
@@ -176,6 +195,7 @@ data:extend(
     prepared_animation = { 
       layers = 
       { 
+        cannon_turret_sheet_shadow{},
         cannon_turret_sheet{},
         cannon_turret_mask{}
       }
@@ -183,6 +203,7 @@ data:extend(
     attacking_animation = { 
       layers = 
       { 
+        cannon_turret_sheet_shadow{},
         cannon_turret_sheet{},
         cannon_turret_mask{}
       }
@@ -190,6 +211,7 @@ data:extend(
     folding_animation = { 
       layers = 
       { 
+        cannon_turret_sheet_shadow{},
         cannon_turret_sheet{},
         cannon_turret_mask{}
       }
@@ -403,8 +425,8 @@ data:extend({
     name = "vtk-cannon-turret",
     icon = path .. "/graphics/icons/cannon-turret-icon.png",
     icon_size = 64,
-    subgroup = "defensive-structure",
-    order = "b[turret]-c[base]-a[cannon-turret]",
+    subgroup = "turret",
+    order = "b[turret]-aa[cannon-turret]",
     place_result = "vtk-cannon-turret",
     stack_size = 20,
     inventory_move_sound = item_sounds.turret_inventory_move,
@@ -416,8 +438,8 @@ data:extend({
     name = "vtk-cannon-turret-heavy",
     icon = path .. "/graphics/icons/cannon-turret-heavy-icon.png",
     icon_size = 64,
-    subgroup = "defensive-structure",
-    order = "b[turret]-c[base]-b[cannon-turret]",
+    subgroup = "turret",
+    order = "b[turret]-aaa[cannon-turret2]",
     place_result = "vtk-cannon-turret-heavy",
     stack_size = 20,
     inventory_move_sound = item_sounds.turret_inventory_move,
