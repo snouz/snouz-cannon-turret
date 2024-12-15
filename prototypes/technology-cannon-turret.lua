@@ -16,10 +16,6 @@ data:extend(
         },
         {
           type = "unlock-recipe",
-          recipe = "vtk-cannon-turret-heavy"
-        },
-        {
-          type = "unlock-recipe",
           recipe = "cannon-shell-magazine"
         },
         {
@@ -30,7 +26,7 @@ data:extend(
     prerequisites = {"gun-turret", "tank"}, 
     unit =
     {
-      count = 100,
+      count = 350,
       ingredients = {
         {"automation-science-pack", 1},
         {"logistic-science-pack", 1},
@@ -44,25 +40,55 @@ data:extend(
   },
   {
     type = "technology",
-    name = "vtk-cannon-turret-wall-resistance",
+    name = "vtk-cannon-turret-heavy-unlock",
     icon_size = 256,
-    icon = path .. "/graphics/technology/vtk-cannon-turret-wall-resistance.png",
+    icon = path .. "/graphics/technology/cannon-turret-heavy-tech.png",
     effects = 
     {
         {
-          type = "nothing",
-          effect_description = "Walls and gates explosion 90% resistance bonus"
+          type = "unlock-recipe",
+          recipe = "vtk-cannon-turret-heavy"
         },
       },
-    prerequisites = {"vtk-cannon-turret-unlock", "stone-wall"}, 
+    prerequisites = {"vtk-cannon-turret-unlock"}, 
     unit =
     {
-      count = 100,
+      count = 350,
       ingredients = {
         {"automation-science-pack", 1},
         {"logistic-science-pack", 1},
         {"chemical-science-pack", 1},
         {"military-science-pack", 1},
+        {"production-science-pack", 1},
+      },
+      time = 30,
+    },
+    upgrade = true,
+    order = "e-c-c-a"
+  },
+  {
+    type = "technology",
+    name = "vtk-cannon-turret-wall-resistance",
+    icon_size = 256,
+    icon = path .. "/graphics/technology/vtk-cannon-turret-wall-resistance.png",
+    effects = 
+    {
+      {
+        type = "nothing",
+        effect_description = "Walls and gates explosion 90% resistance bonus"
+      },
+    },
+    prerequisites = {"vtk-cannon-turret-unlock", "stone-wall"}, 
+    unit =
+    {
+      count = 600,
+      ingredients = {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"military-science-pack", 1},
+        {"production-science-pack", 1},
+        {"utility-science-pack", 1},
       },
       time = 30,
     },
