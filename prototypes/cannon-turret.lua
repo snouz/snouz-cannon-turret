@@ -161,7 +161,7 @@ data:extend(
       ammo_category = "cannon-shell",
       cooldown = 180,
       projectile_creation_distance = 2,
-      projectile_center = {0, 0},
+      projectile_center = {0, 0.2},
       damage_modifier = 1,
       shell_particle =
       {

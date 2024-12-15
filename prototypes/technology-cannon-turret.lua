@@ -61,8 +61,18 @@ data:extend(
   {
     type = "technology",
     name = "vtk-cannon-turret-wall-resistance",
-    icon_size = 256,
-    icon = path .. "/graphics/technology/vtk-cannon-turret-wall-resistance.png",
+    icons = {
+      {
+        icon = path .. "/graphics/technology/vtk-cannon-turret-wall-resistance.png",
+        icon_size = 256,
+      },
+      {
+        icon = path .. "/graphics/technology/constant-defense.png",
+        icon_size = 128,
+        scale = 0.5,
+        shift = {50, 50}
+      }
+    },
     effects = 
     {
       {
