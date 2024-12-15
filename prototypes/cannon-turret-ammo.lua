@@ -1,5 +1,7 @@
 local item_sounds = require("__base__.prototypes.item_sounds")
 
+local path = "__snouz-cannon-turret__"
+
 -- New category for turret cannon shells
 data:extend(
 {
@@ -19,7 +21,7 @@ data:extend(
     type = "ammo",
     name = "cannon-shell-magazine",
     description = "cannon-shell-magazine",
-    icon = "__vtk-cannon-turret__/graphics/icons/cannon-shell-magazine.png",
+    icon = path .. "/graphics/icons/cannon-shell-magazine.png",
     icon_size = 64,
     ammo_category = "cannon-shell-magazine",
     ammo_type =
@@ -59,7 +61,7 @@ data:extend(
     type = "ammo",
     name = "explosive-cannon-shell-magazine",
     description = "explosive-cannon-shell-magazine",
-    icon = "__vtk-cannon-turret__/graphics/icons/explosive-cannon-shell-magazine.png",
+    icon = path .. "/graphics/icons/explosive-cannon-shell-magazine.png",
     icon_size = 64,
     ammo_category = "cannon-shell-magazine",
     ammo_type =
@@ -99,7 +101,7 @@ data:extend(
     type = "ammo",
     name = "uranium-cannon-shell-magazine",
     description = "uranium-cannon-shell-magazine",
-    icon = "__vtk-cannon-turret__/graphics/icons/uranium-cannon-shell-magazine.png",
+    icon = path .. "/graphics/icons/uranium-cannon-shell-magazine.png",
     icon_size = 64,
     ammo_category = "cannon-shell-magazine",
     ammo_type =
@@ -139,7 +141,7 @@ data:extend(
     type = "ammo",
     name = "explosive-uranium-cannon-shell-magazine",
     description = "explosive-uranium-cannon-shell-magazine",
-    icon = "__vtk-cannon-turret__/graphics/icons/explosive-uranium-cannon-shell-magazine.png",
+    icon = path .. "/graphics/icons/explosive-uranium-cannon-shell-magazine.png",
     icon_size = 64,
     ammo_category = "cannon-shell-magazine",
     ammo_type =

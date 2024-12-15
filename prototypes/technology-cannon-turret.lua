@@ -1,3 +1,5 @@
+local path = "__snouz-cannon-turret__"
+
 -- New cannon turret and its shell magazine ammo technology
 data:extend(
 {
@@ -5,7 +7,7 @@ data:extend(
     type = "technology",
     name = "vtk-cannon-turret-unlock",
     icon_size = 128,
-    icon = "__vtk-cannon-turret__/graphics/technology/cannon-turret-tech.png",
+    icon = path .. "/graphics/technology/cannon-turret-tech.png",
     effects = 
     {
         {
@@ -44,7 +46,7 @@ data:extend(
     type = "technology",
     name = "vtk-cannon-turret-wall-resistance",
     icon_size = 128,
-    icon = "__vtk-cannon-turret__/graphics/technology/vtk-cannon-turret-wall-resistance.png",
+    icon = path .. "/graphics/technology/vtk-cannon-turret-wall-resistance.png",
     effects = 
     {
         {
