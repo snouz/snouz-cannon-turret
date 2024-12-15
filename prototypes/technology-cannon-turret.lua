@@ -6,7 +6,7 @@ data:extend(
   {
     type = "technology",
     name = "vtk-cannon-turret-unlock",
-    icon_size = 128,
+    icon_size = 256,
     icon = path .. "/graphics/technology/cannon-turret-tech.png",
     effects = 
     {
@@ -45,7 +45,7 @@ data:extend(
   {
     type = "technology",
     name = "vtk-cannon-turret-wall-resistance",
-    icon_size = 128,
+    icon_size = 256,
     icon = path .. "/graphics/technology/vtk-cannon-turret-wall-resistance.png",
     effects = 
     {
